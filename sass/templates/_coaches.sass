@@ -1,0 +1,27 @@
+.cards
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+.card
+  padding: 2.357rem 2.214rem
+  background-color: $bg
+  border-radius: 15px
+  box-shadow: 9px 9px 24px $card-shadow 
+  border: 1px solid darken($bg, 10%)
+  flex: 0.3
+  &__heading
+    display: flex
+    align-items: center
+    justify-content: center
+    margin-bottom: 1.643rem
+    margin-right: 0
+  &__img
+    margin-right: 1rem
+  &__title
+    font-family: 'Russo One', sans-serif
+    line-height: 160%
+    color: $primary-light
+    max-width: 9rem
+  &__body
+    line-height: 180%
+    

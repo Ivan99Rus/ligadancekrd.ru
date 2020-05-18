@@ -1,0 +1,38 @@
+.swiper
+  &-slide
+    display: flex
+    flex-wrap: wrap
+    &__title
+      line-height: 160%
+      color: $primary-light
+      margin-bottom: 5.857rem
+      max-width: 17.289rem
+      font-family: 'Russo One', sans-serif
+    &__text
+      line-height: 160%
+      margin-bottom: 2.42rem
+      padding-bottom: 2rem
+      max-width: 27.214rem
+  &-pagination
+    &-bullet
+      background-color: #000000
+      &-active
+        background-color: #000000
+  &-button
+    &-prev, &-next
+      bottom: 2px
+      top: auto
+      background-size: 42px
+      width: 42px
+      height: 14px
+      &::after
+        display: none 
+    &-prev
+      left: 0
+      background: url(../img/arrow-prev.svg) no-repeat center
+    &-next
+      background: url(../img/arrow-next.svg) no-repeat center
+
+.swiper-container-horizontal>.swiper-pagination-bullets 
+  width: auto
+  bottom: 0
