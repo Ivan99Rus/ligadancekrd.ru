@@ -4,9 +4,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Roboto:wght@400;700&family=Russo+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2564553983799852'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=2564553983799852&ev=PageView
+    &noscript=1"/>
+  </noscript>
+  <!-- End Facebook Pixel Code -->
+
   <title>Liga Dance</title>
 </head>
 
@@ -19,11 +41,12 @@
         </div>
         <!-- / .logo menu__logo -->
         <nav class="nav menu__nav">
-          <a href="#" class="nav__item">Главная</a>
-          <a href="#" class="nav__item">Расписание</a>
-          <a href="#" class="nav__item">О нас</a>
-          <a href="#" class="nav__item">Тренеры</a>
-          <a href="#" class="nav__item">Достижения</a>
+          <a href="#hero" class="nav__item">Главная</a>
+          <a href="#schedule" class="nav__item">Расписание</a>
+          <a href="#about" class="nav__item">О нас</a>
+          <a href="#coaches" class="nav__item">Тренеры</a>
+          <a href="#progress" class="nav__item">Достижения</a>
+          <a href="#contacts" class="nav__item">Контакты</a>
         </nav>
         <!-- /.nav menu__nav -->
         <div class="contacts menu__contacts">
@@ -37,7 +60,7 @@
   <!-- /.header -->
 
   <main>
-    <section class="section hero section--color">
+    <section class="section hero section--color" id="hero">
       <div class="container">
         <div class="row">
           <div class="col-50 hero__col-1">
@@ -64,32 +87,32 @@
             </div>
           </div>
           <!-- /.col-50 -->
-          <div class="col-50">
+          <div class="col-50 col-img">
             <img src="img/main-bg.png" alt="Танцующая пара" class="hero__main-bg">
           </div>
           <!-- /.col-50 -->
         </div>
         <!-- /.row -->
         <div class="leave-request">
-          <form action="#" class="form leave-request__form hero__form">
+          <form action="mail.php" method="post" class="form leave-request__form hero__form">
             <div class="form__item">
               <label for="user-name" class="label form__label label--light">Имя</label>
-              <input type="text" class="input form__input" id="user-name" placeholder="Как вас зовут:">             
+              <input type="text" class="input form__input" id="user-name" name="user-name" placeholder="Как вас зовут:">             
             </div>
 
             <div class="form__item">
               <label for="user-phone" class="label form__label label--light">Телефон</label>
-              <input type="tel" class="input form__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" class="input form__input" id="user-phone" name="user-phone" placeholder="Ваш номер телефона:">
             </div> 
 
-            <button class="btn" type="submit">Оставить заявку</button>
+            <button class="btn hero__btn" type="submit">Оставить заявку</button>
           </form>
         </div>
       </div>
     </section>
     <!-- /.section hero section--color -->
 
-    <section class="section schedule">
+    <section class="section schedule" id="schedule">
       <div class="container">
         <h2 class="section-header">Расписание занятий</h2>
         <div class="schedule__tables">
@@ -199,7 +222,7 @@
     </section>
     <!-- /.section schedule -->
 
-    <section class="section about section--color">
+    <section class="section about section--color" id="about">
       <div class="container">
         <h2 class="section-header">Узнайте о нас больше!</h2>
         <div class="row">
@@ -260,9 +283,9 @@
 
               </div>
 
-              <div class="about__swiper-button-prev swiper-button-prev"></div>
-              <div class="about__swiper-pagination swiper-pagination"></div>
-              <div class="about__swiper-button-next swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
 
             </div>
           </div>
@@ -301,7 +324,7 @@
     </section>
     <!-- /.section about section--color -->
 
-    <section class="section coaches">
+    <section class="section coaches" id="coaches">
       <div class="container">
         <h2 class="section-header">Наши тренеры</h2>
         <div class="cards">
@@ -360,81 +383,9 @@
     </section>
     <!-- /.section coaches -->
 
-    <section class="section progress section--color">
-      <div class="container">
-        <h2 class="section-header">Достижения наших учеников и перспективы</h2>
-        <div class="row">
-          <div class="col-50">
-            <p class="progress__text">
-              Обучение спортивным танцам формирует у детей не только физическое и эстетическое развитие, но и закладывает 
-              основы для успешного развития в будущем. Нашим ученикам есть к чему стремиться. На базе танцевальной школы 
-              действует танцевально-спортивный профессиональный клуб Лига Дэнс. Для выхода на более высокий квалификационный 
-              уровень достаточно лишь вашего желания, а наш тренерский состав подготовит специально под вас индивидуальную 
-              программу подготовки для достижения более высоких спортивных результатов. Наши юные воспитанники уже имеют в 
-              своей копилке не только высокие оценки и кубки по результатам официальных соревнований, но и уже получили 3й 
-              юношеский разряд в танцевальном спорте. Такие достижения также приносят дополнительные преимущества в будущем 
-              при поступлении в ВУЗы.
-            </p>
-          </div>
-          <!-- /.col-50 -->
-          <div class="col-50">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-1.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-2.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-3.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-4.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-5.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-6.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-7.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-8.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-9.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-                <div class="swiper-slide">
-                  <img src="img/progress/progress-10.jpg" alt="">
-                </div>
-                <!-- /.swiper-slide -->
-              </div>
-              <div class="swiper__nav">
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
 
-            </div>
-          </div>
-          <!-- /.col-50 -->
-        </div>
-      </div>
-    </section>
-    <!-- /.section progress section--color -->
 
-    <section class="section contacts">
+    <section class="section contacts" id="contacts">
       <div class="container">
         <h2 class="section-header">Контакты</h2>
         <p class="contacts__subtitle">
@@ -451,15 +402,15 @@
         <h2 class="section-header">Остались вопросы?</h2>
         <h3 class="questions__subtitle">Запишитесь на первый урок совершенно бесплатно!</h3>
         <div class="leave-request">
-          <form action="#" class="form leave-request__form questions__form">
+          <form action="mail.php" method="post" class="form leave-request__form questions__form">
             <div class="form__item">
               <label for="user-name" class="label form__label label--light">Имя</label>
-              <input type="text" class="input form__input" id="user-name" placeholder="Как вас зовут:">             
+              <input type="text" class="input form__input" id="user-name" name="user-name" placeholder="Как вас зовут:">             
             </div>
 
             <div class="form__item">
               <label for="user-phone" class="label form__label label--light">Телефон</label>
-              <input type="tel" class="input form__input" id="user-phone" placeholder="Ваш номер телефона:">
+              <input type="tel" class="input form__input" id="user-phone" name="user-phone" placeholder="Ваш номер телефона:">
             </div> 
 
             <button class="btn questions__btn" type="submit">Оставить заявку</button>
@@ -482,6 +433,7 @@
           <a href="#" class="nav__item">О нас</a>
           <a href="#" class="nav__item">Тренеры</a>
           <a href="#" class="nav__item">Достижения</a>
+          <a href="#contacts" class="nav__item">Контакты</a>
         </nav>
         <!-- /.nav menu__nav -->
         <div class="contacts menu__contacts">
@@ -493,9 +445,105 @@
     </div>
   </div>
   </footer>
+
+  <div class="modal">
+    <div class="modal__dialog">
+      <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами </h3>
+      <form action="mail.php" method="post" class="form modal__form">
+        <label for="user-name" class="label form__label label--light">Имя</label>
+        <input type="text" class="input modal__input form__input" id="user-name" name="user-name" placeholder="Как вас зовут:">
+
+        <label for="user-phone" class="label form__label label--light">Телефон</label>
+        <input type="tel" class="input modal__input form__input" id="user-phone" name="user-phone" placeholder="Ваш номер телефона:">
+
+        <label for="user-email" class="label form__label label--light">Email</label>
+        <input type="email" class="input modal__input form__input" id="user-email" name="user-email" placeholder="Ваш email:">
+
+        <button class="btn modal__button">Оставить заявку</button>
+      </form>
+      <!-- /.form modal__form -->
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal -->
+
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="js/main.js"></script>
 </body>
 
 </html>
+<!--
+<section class="section progress section--color" id="progress">
+  <div class="container">
+    <h2 class="section-header">Достижения наших учеников и перспективы</h2>
+    <div class="row">
+      <div class="col-50">
+        <p class="progress__text">
+          Обучение спортивным танцам формирует у детей не только физическое и эстетическое развитие, но и закладывает 
+          основы для успешного развития в будущем. Нашим ученикам есть к чему стремиться. На базе танцевальной школы 
+          действует танцевально-спортивный профессиональный клуб Лига Дэнс. Для выхода на более высокий квалификационный 
+          уровень достаточно лишь вашего желания, а наш тренерский состав подготовит специально под вас индивидуальную 
+          программу подготовки для достижения более высоких спортивных результатов. Наши юные воспитанники уже имеют в 
+          своей копилке не только высокие оценки и кубки по результатам официальных соревнований, но и уже получили 3й 
+          юношеский разряд в танцевальном спорте. Такие достижения также приносят дополнительные преимущества в будущем 
+          при поступлении в ВУЗы.
+        </p>
+      </div>
+      <!-- /.col-50 --
+      <div class="col-50">
+        <div class="progress__slider-container">
+          <div class="progress__slider-wrapper">
+            <div class="slider-slide">
+              <img src="img/progress/progress-1.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-2.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-3.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-4.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-5.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-6.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-7.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-8.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-9.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+            <div class="slider-slide">
+              <img src="img/progress/progress-10.jpg" alt="">
+            </div>
+            <!-- /.slider-slide --
+          </div>
+          <div class="swiper__nav">
+            <div class="progress__slider-button-prev"></div>
+            <div class="progress__slider-button-next"></div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /.col-50 --
+    </div>
+  </div>
+</section>
+<!-- /.section progress section--color -->
