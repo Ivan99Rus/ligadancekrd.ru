@@ -1895,13 +1895,14 @@ button.slider-pagination-bullet {
   .swiper-slide img {
     margin-top: 3rem;
     max-width: 100%;
+    -o-object-fit: fill;
+       object-fit: fill;
   }
   .row {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
   .row .col-50 {
-    border: 1px solid red;
     width: 100%;
   }
 }
