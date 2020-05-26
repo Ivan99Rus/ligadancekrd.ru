@@ -3,11 +3,41 @@
     line-height: 200%
     margin: auto
   &__slider
+    max-width: 289px
     &__nav
       margin-top: 2rem
     &-container
       margin-right: 0
       max-width: 20.594rem
-    &-button
-      &-prev, &-next
-        bottom: 0
+  &__photo
+    margin: auto
+
+
+.slick
+  &-col
+    display: flex
+    justify-content: flex-end
+  &-dots
+    max-width: 150px
+    bottom: -4.2rem
+    left: 50%
+    transform: translateX(-50%)
+  &-nextArrow, &-prevArrow
+    position: absolute
+    border: none
+    outline: none
+    bottom: -3rem
+    top: auto
+    background-size: 100%
+    cursor: pointer
+    width: 42px
+    height: 14px
+    &::after
+      display: none 
+  &-prevArrow
+    left: 0
+    background: url(../img/arrow-prev.svg) no-repeat center
+  &-nextArrow
+    right: 0
+    background: url(../img/arrow-next.svg) no-repeat center 
+

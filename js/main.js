@@ -77,4 +77,12 @@ $(document).ready(function () {
 
   next.css('left', prev.width() + 10 + bullets.width() + 10);
   bullets.css('left', prev.width() + 10);
+
+
+  //slick
+  $('.progress__slider').slick({
+    dots: true,
+    prevArrow: '<button class="slick-prevArrow"></button>',
+    nextArrow: '<button class="slick-nextArrow"></button>'
+  });
 });

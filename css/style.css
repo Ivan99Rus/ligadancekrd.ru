@@ -1722,6 +1722,10 @@ button.slider-pagination-bullet {
   margin: auto;
 }
 
+.progress__slider {
+  max-width: 289px;
+}
+
 .progress__slider__nav {
   margin-top: 2rem;
 }
@@ -1731,8 +1735,51 @@ button.slider-pagination-bullet {
   max-width: 20.594rem;
 }
 
-.progress__slider-button-prev, .progress__slider-button-next {
-  bottom: 0;
+.progress__photo {
+  margin: auto;
+}
+
+.slick-col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.slick-dots {
+  max-width: 150px;
+  bottom: -4.2rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.slick-nextArrow, .slick-prevArrow {
+  position: absolute;
+  border: none;
+  outline: none;
+  bottom: -3rem;
+  top: auto;
+  background-size: 100%;
+  cursor: pointer;
+  width: 42px;
+  height: 14px;
+}
+
+.slick-nextArrow::after, .slick-prevArrow::after {
+  display: none;
+}
+
+.slick-prevArrow {
+  left: 0;
+  background: url(../img/arrow-prev.svg) no-repeat center;
+}
+
+.slick-nextArrow {
+  right: 0;
+  background: url(../img/arrow-next.svg) no-repeat center;
 }
 
 .contacts__subtitle {
@@ -1888,6 +1935,14 @@ button.slider-pagination-bullet {
 }
 
 @media screen and (max-width: 780px) {
+  .progress__col {
+    margin-bottom: 4rem;
+  }
+  .slick-col {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   .swiper-slide__text {
     margin: 0 auto 3rem;
     padding: 0;
