@@ -1555,6 +1555,12 @@ button.slider-pagination-bullet {
   margin-bottom: 4.214rem;
 }
 
+.hero__subtitle {
+  margin: 0;
+  text-align: center;
+  margin-bottom: -3rem;
+}
+
 .hero__list {
   max-width: 29.214rem;
 }
@@ -1590,7 +1596,6 @@ button.slider-pagination-bullet {
 
 .schedule__tables {
   text-align: center;
-  overflow: scroll;
 }
 
 .schedule__table {
@@ -1645,6 +1650,7 @@ button.slider-pagination-bullet {
   background-size: 42px;
   width: 42px;
   height: 14px;
+  outline: none;
 }
 
 .swiper-button-prev::after, .swiper-button-next::after {
@@ -1750,7 +1756,9 @@ button.slider-pagination-bullet {
 
 .slick-dots {
   max-width: 150px;
-  bottom: -4.2rem;
+  bottom: -5rem;
+  max-height: 5rem;
+  overflow: hidden;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -1916,6 +1924,9 @@ button.slider-pagination-bullet {
 }
 
 @media screen and (max-width: 860px) {
+  .schedule {
+    overflow: scroll;
+  }
   .cards {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -1972,6 +1983,10 @@ button.slider-pagination-bullet {
 }
 
 @media screen and (max-width: 600px) {
+  .card {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
   .col-img {
     display: none;
   }
